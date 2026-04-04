@@ -80,15 +80,14 @@ for f in range(1,len(rounds)+1):
 	contador_victorias[lista_resultados[0][0]] += 1
 	print(f'''
 	    Ronda {f} -{rounds[aux_tematica]['theme']}
-		Ganador: {lista_resultados[0][0]:<12}       ({lista_resultados[0][f]})
-		Segundo lugar: {lista_resultados[1][0]:<12} ({lista_resultados[1][f]})
-		Tercer lugar: {lista_resultados[2][0]:<12}  ({lista_resultados[2][f]})
-		Cuarto lugar: {lista_resultados[3][0]:<12}  ({lista_resultados[3][f]})
-		Quinto lugar: {lista_resultados[4][0]:<12}  ({lista_resultados[4][f]})
+		Ganador: {lista_resultados[0][0]:<12}       ({lista_resultados[0][f]} pts)
+		Segundo lugar: {lista_resultados[1][0]:<12} ({lista_resultados[1][f]} pts)
+		Tercer lugar: {lista_resultados[2][0]:<12}  ({lista_resultados[2][f]} pts)
+		Cuarto lugar: {lista_resultados[3][0]:<12}  ({lista_resultados[3][f]} pts)
+		Quinto lugar: {lista_resultados[4][0]:<12}  ({lista_resultados[4][f]} pts)
 		''')
 	aux_tematica +=1
 	print('-------------------------------------------------------------------------------------')
-	print()
 
 
 
@@ -101,13 +100,9 @@ for o in range (0,len(lista_nombres)):
 lista_resultados_final.sort(key=lambda x: x[1], reverse=True)
 
 
-print(f'''
-Cocinero          Puntaje          Rondas ganadas       Mejor ronda          Promedio    
--------------------------------------------------------------------------------------------------
-{lista_resultados_final[0][0]:<19} {lista_resultados_final[0][1]:<19} {contador_victorias [lista_resultados_final[0][0]]:<19} {lista_resultados_final[0][2]:<19} {lista_resultados_final[0][1] / len(rounds)}
-{lista_resultados_final[1][0]:<19} {lista_resultados_final[1][1]:<19} {contador_victorias [lista_resultados_final[1][0]]:<19} {lista_resultados_final[1][2]:<19} {lista_resultados_final[1][1] / len(rounds)}
-{lista_resultados_final[2][0]:<19} {lista_resultados_final[2][1]:<19} {contador_victorias [lista_resultados_final[2][0]]:<19} {lista_resultados_final[2][2]:<19} {lista_resultados_final[2][1] / len(rounds)}
-{lista_resultados_final[3][0]:<19} {lista_resultados_final[3][1]:<19} {contador_victorias [lista_resultados_final[3][0]]:<19} {lista_resultados_final[3][2]:<19} {lista_resultados_final[3][1] / len(rounds)}
-{lista_resultados_final[4][0]:<19} {lista_resultados_final[4][1]:<19} {contador_victorias [lista_resultados_final[4][0]]:<19} {lista_resultados_final[4][2]:<19} {lista_resultados_final[4][1] / len(rounds)}
+print('Cocinero          Puntaje          Rondas ganadas       Mejor ronda          Promedio')
+print ('-------------------------------------------------------------------------------------')
+for q in range (0,len(lista_nombres)):
+	print (f'{lista_resultados_final[q][0]:<19} {lista_resultados_final[q][1]:<19} {contador_victorias [lista_resultados_final[q][0]]:<19} {lista_resultados_final[q][2]:<19} {lista_resultados_final[q][1] / len(rounds)}')
 
-''')
+
