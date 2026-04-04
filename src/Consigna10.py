@@ -53,6 +53,7 @@ rounds = [
 aux_tematica= 0
 lista_nombres= list(rounds[0]['scores'])
 lista_resultados= []
+lista_resultados_final=[]
 contador_victorias= {
 	'Valentina': 0,
 	'Mateo':0,
@@ -62,6 +63,7 @@ contador_victorias= {
 	}
 for r in range (len(lista_nombres)):
 	lista_resultados.append([lista_nombres[r]])
+	
 
 for p in range (len(rounds)):
 	for j in range (len(rounds[p]['scores'])):
@@ -71,6 +73,7 @@ for p in range (len(rounds)):
 			puntaje+=puntos[i]
 		lista_resultados[j].append(puntaje)
 
+	
 for f in range(1,len(rounds)+1):
 	lista_resultados.sort(key=lambda x: x[f], reverse=True)
 	
@@ -86,5 +89,25 @@ for f in range(1,len(rounds)+1):
 	aux_tematica +=1
 	print('-------------------------------------------------------------------------------------')
 	print()
-print('''
+
+
+
+for o in range (0,len(lista_nombres)):
+	lista_resultados_final.append ([lista_resultados[o][0]])
+	lista_resultados_final[o].append(sum(lista_resultados[o][1:]))
+	lista_resultados_final[o].append(max(lista_resultados[o][1:]))
+
+
+lista_resultados_final.sort(key=lambda x: x[1], reverse=True)
+
+
+print(f'''
+Cocinero          Puntaje          Rondas ganadas       Mejor ronda          Promedio    
+-------------------------------------------------------------------------------------------------
+{lista_resultados_final[0][0]:<19} {lista_resultados_final[0][1]:<19} {contador_victorias [lista_resultados_final[0][0]]:<19} {lista_resultados_final[0][2]:<19} {lista_resultados_final[0][1] / len(rounds)}
+{lista_resultados_final[1][0]:<19} {lista_resultados_final[1][1]:<19} {contador_victorias [lista_resultados_final[1][0]]:<19} {lista_resultados_final[1][2]:<19} {lista_resultados_final[1][1] / len(rounds)}
+{lista_resultados_final[2][0]:<19} {lista_resultados_final[2][1]:<19} {contador_victorias [lista_resultados_final[2][0]]:<19} {lista_resultados_final[2][2]:<19} {lista_resultados_final[2][1] / len(rounds)}
+{lista_resultados_final[3][0]:<19} {lista_resultados_final[3][1]:<19} {contador_victorias [lista_resultados_final[3][0]]:<19} {lista_resultados_final[3][2]:<19} {lista_resultados_final[3][1] / len(rounds)}
+{lista_resultados_final[4][0]:<19} {lista_resultados_final[4][1]:<19} {contador_victorias [lista_resultados_final[4][0]]:<19} {lista_resultados_final[4][2]:<19} {lista_resultados_final[4][1] / len(rounds)}
+
 ''')
