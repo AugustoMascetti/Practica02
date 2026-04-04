@@ -53,6 +53,8 @@ rounds = [
 
 lista_nombres= list(rounds[0]['scores'])
 lista_resultados= []
+for r in range (len(lista_nombres)):
+	lista_resultados.append([lista_nombres[r]])
 
 for p in range (len(rounds)):
 	for j in range (len(rounds[p]['scores'])):
@@ -60,9 +62,10 @@ for p in range (len(rounds)):
 		puntaje=0
 		for i in range(3):
 			puntaje+=puntos[i]
-		
-					
+		lista_resultados[j].append(puntaje)
 
-print(lista_resultados)
-		
-	
+
+for f in range(1,len(rounds)+1):
+	lista_resultados.sort(key=lambda x: x[f], reverse=True)
+	print(lista_resultados)
+	print()
