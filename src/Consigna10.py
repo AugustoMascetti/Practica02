@@ -50,7 +50,7 @@ rounds = [
         }
     }
 ]
-
+aux_tematica= 0
 lista_nombres= list(rounds[0]['scores'])
 lista_resultados= []
 contador_victorias= {
@@ -73,8 +73,18 @@ for p in range (len(rounds)):
 
 for f in range(1,len(rounds)+1):
 	lista_resultados.sort(key=lambda x: x[f], reverse=True)
-	contador_victorias[lista_resultados[0][0]] += 1
-	print(lista_resultados)
 	
+	contador_victorias[lista_resultados[0][0]] += 1
+	print(f'''
+	    Ronda {f} -{rounds[aux_tematica]['theme']}
+		Ganador: {lista_resultados[0][0]:<12}       ({lista_resultados[0][f]})
+		Segundo lugar: {lista_resultados[1][0]:<12} ({lista_resultados[1][f]})
+		Tercer lugar: {lista_resultados[2][0]:<12}  ({lista_resultados[2][f]})
+		Cuarto lugar: {lista_resultados[3][0]:<12}  ({lista_resultados[3][f]})
+		Quinto lugar: {lista_resultados[4][0]:<12}  ({lista_resultados[4][f]})
+		''')
+	aux_tematica +=1
+	print('-------------------------------------------------------------------------------------')
 	print()
-print(contador_victorias)
+print('''
+''')
