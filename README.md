@@ -1,3 +1,6 @@
+Nombre y apellido: Augusto Mascetti
+Numero de legajo: 018669/2
+
 Practica02 - Ciencia de datos en organizaciones
 
 Descripción: en este repositorio esta la resolución del ejercicio 10 del trabajo práctico.
@@ -5,7 +8,7 @@ Grafica las tablas de posiciones por ronda y la tabla final a partir de los dato
 
 Requisitos:
 
--Tener instalado Python 3.
+-Tener instalado Python 3.12.9.
 
 -Instalar JupyterLab ejecutando el siguiente comando en una terminal(ver en la ejecucion): pip install jupyter[lab]
 
